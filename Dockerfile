@@ -1,6 +1,6 @@
 FROM node:12.14.1-alpine
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app && mkdir -p /home/node/app/upload && chown -R node:node /home/node/app/upload
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
 WORKDIR /home/node/app
 
