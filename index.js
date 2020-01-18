@@ -1,17 +1,35 @@
 const express = require('express')
 const app = express()
 const fs = require('fs')
-const version = 2
+const __ = require('./utils/utils')
 
-console.log('Process pid:', process.pid)
-app.listen(3000, () => {
-	console.log('App listening on port '+ 3000)
+const config = require(__.path('config/config')) 
+
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+	console.log('App listening on port '+ port)
 })
 
-app.use((req, res, next) => {
-	console.log('#'+ process.pid, req.method +'|'+ req.path)
-	next()
+/* Middleware */
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const helmet = require('helmet')
+    
+app.use(bodyParser.json())
+    .use(bodyParser.urlencoded({extended: true, limit: '10mb'}))
+    .use(cors({
+        origin: '*'
+    }))
+    .use(helmet())
+
+app.get('/:bucket/:w(\\d+)?:d(\\x)?:h(\\d+)?:c(/)?:image', (req, res) => {
+	res.json(req.params)
 })
+
+app.post('/upload', (req, res) => {
+
+})
+
 
 app.get('/ping', (req, res) => {
 	res.send('pong')
