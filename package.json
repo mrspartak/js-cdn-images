@@ -1,6 +1,6 @@
 {
   "name": "image-api",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "*",
+    "express": "^4.17.1",
     "express-fileupload": "^1.1.6",
     "helmet": "^3.21.2",
     "lodash": "^4.17.15",
