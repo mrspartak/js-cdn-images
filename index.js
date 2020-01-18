@@ -3,8 +3,6 @@ const app = express()
 const fs = require('fs')
 const __ = require('./utils/utils')
 
-const config = require(__.path('config/config')) 
-
 const port = process.env.PORT || 3000
 app.listen(port, () => {
 	console.log('App listening on port '+ port)
