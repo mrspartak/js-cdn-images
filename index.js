@@ -104,7 +104,7 @@ app.post('/upload', ensureAuth, async (req, res) => {
 
 		var [error] = await __.to(fs.promises.mkdir(absoluteFolderPath, {recursive: true}))
 		if(error) {
-			if(DEBUG) console.log('/upload', 'create folder error', error)
+			if(DEBUG) console.log('/upload', 'create folder error', error, absoluteFolderPath)
 			return res.json({success: false, error: 'Error uploading image'})
 		}
 

@@ -6,6 +6,10 @@ WORKDIR /home/node/app
 
 COPY package*.json ./
 
+RUN usermod -u 1000 node
+
+RUN chown -R node:node /home/node/app/upload
+
 USER node
 
 RUN npm install
