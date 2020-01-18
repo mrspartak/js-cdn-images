@@ -11,6 +11,19 @@ const HOST_DOMAIN = process.env.HOST_DOMAIN || '127.0.0.1:'+ APP_PORT
 const API_KEY = process.env.API_KEY || false
 const DEBUG = process.env.DEBUG || false
 
+console.log('app started with', {
+	APP_PORT,
+	HOST_SCHEME,
+	HOST_DOMAIN,
+	DEBUG,
+	env: {
+		APP_PORT: process.env.APP_PORT,
+		HOST_SCHEME: process.env.HOST_SCHEME,
+		HOST_DOMAIN: process.env.HOST_DOMAIN,
+		DEBUG: process.env.DEBUG,
+	}
+})
+
 app.listen(APP_PORT, () => {
 	console.log('App listening on port '+ APP_PORT)
 })
