@@ -1,12 +1,6 @@
 const request = require('supertest')
 const app = require('../src/server')
 
-beforeAll(() => {
-	process.env = Object.assign(process.env, { 
-		NODE_ICU_DATA: 'node_modules/full-icu' 
-	})
-})
-
 describe('GET /_status', () => {
 	it('should get JSON with status info', (done) => {
 		request(app)
