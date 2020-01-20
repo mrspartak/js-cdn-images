@@ -3,6 +3,9 @@
 This app supports uploading, delivering and manipulating images (resizing on fly with cache)
 For better deployment use this repo https://github.com/mrspartak/js-cdn-images-dc
 
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/assorium/js-cdn-images?style=for-the-badge)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/assorium/js-cdn-images?style=for-the-badge)
+
 ## API
 Under construction
 
