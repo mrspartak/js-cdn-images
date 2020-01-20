@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --forceExit --detectOpenHandles"
   },
   "author": "",
   "license": "ISC",
@@ -18,5 +18,16 @@
     "moment": "^2.24.0",
     "nano-md5": "^1.0.5",
     "sharp": "^0.24.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
   }
 }

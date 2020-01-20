@@ -43,4 +43,7 @@ exports.asyncForEach = async function(array, callback) {
 exports.checkConstant = function(constant, value) {
 	return Object.values(constant).indexOf(value) == -1 ? false : true
 }
-
+//length - 9 maximum
+exports.uniqueID = function(length) {
+	return Math.random().toString(36).substr(2, length);
+}
